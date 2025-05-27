@@ -114,7 +114,7 @@ npm install
 
 ### 3. Configura las variables de entorno
 
-Crea un archivo `.env` en la raíz del proyecto y agrega tus variables necesarias, por ejemplo:
+Crea un archivo `.env` en el Backend del proyecto y agrega tus variables necesarias, por ejemplo:
 
 ```
 SECRET_KEY=tu_clave_secreta

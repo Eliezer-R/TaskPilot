@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useValidationContext } from './hooks/contextValueUser'
-
+// This file contains the validation logic and form submission handlers for user registration and login
+// It uses React context to manage form state and validation errors
 function useValidation () {
   const {
     setName,

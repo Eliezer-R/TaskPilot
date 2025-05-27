@@ -6,6 +6,7 @@ import db from '../db.js'
 export const Router = express.Router()
 const KEY = process.env.SECRET_KEY
 
+
 const generateToken = (user) => {
   return jwt.sign({ id: user.id, email: user.email }, KEY, { expiresIn: '1d' })
 }

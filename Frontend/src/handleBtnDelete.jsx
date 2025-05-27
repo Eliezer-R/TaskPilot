@@ -1,6 +1,7 @@
 function useDeleteClick ({ objId, setTaskObj, setModalTask }) {
   const handleDeleteClick = async () => {
-    if (objId.task_id === undefined) return
+    // Check if objId.task_id is defined before proceeding
+    if (objId.task_id === undefined || objId.task_id === null) return
     try {
       const response = await fetch(`http://localhost:3000/tasks/${objId.task_id}`, {
         method: 'DELETE',

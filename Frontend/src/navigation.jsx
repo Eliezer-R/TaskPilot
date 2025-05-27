@@ -14,7 +14,7 @@ function useNavigaten (methodName) {
     setPassword
   } = useValidationContext()
 
-  // reset all values
+  // reset all values while navigating to a new page
   const setDefaultValues = (name) => {
     setUserNotExists(false)
     setNameError(false)

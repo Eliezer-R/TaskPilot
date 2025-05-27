@@ -21,5 +21,5 @@ app.use('/', Router)
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`)
+  console.info(`✅ Server running on http://localhost:${PORT}`)
 })

@@ -42,6 +42,7 @@ function Tasks () {
           <div className='content-content'>
             <div>
               {taskObj.length > 0 && taskObj.map((task, index) => {
+                // if there are no tasks, we show nothing
                 return (
                   <ElemTasks
                     key={index}

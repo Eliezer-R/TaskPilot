@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 
-BOARD/main.js
 
 .env
 .vscode/*

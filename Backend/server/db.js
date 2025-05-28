@@ -17,4 +17,12 @@ const Connetion = mysql.createPool({
   database: process.env.DB_NAME
 })
 
+try {
+  const connection = await Connetion.getConnection()
+  console.log('✅ Database connected successfully!')
+  connection.release()
+} catch (error) {
+  console.error('❌ Database connection failed:', error.message)
+}
+
 export default Connetion

@@ -1,9 +1,10 @@
+const Port = import.meta.env.PORT || 3000
 function useDeleteClick ({ objId, setTaskObj, setModalTask }) {
   const handleDeleteClick = async () => {
     // Check if objId.task_id is defined before proceeding
     if (objId.task_id === undefined || objId.task_id === null) return
     try {
-      const response = await fetch(`http://localhost:3000/tasks/${objId.task_id}`, {
+      const response = await fetch(`http://localhost:${Port}/tasks/${objId.task_id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -28,3 +29,4 @@ function useDeleteClick ({ objId, setTaskObj, setModalTask }) {
 }
 
 export default useDeleteClick
+

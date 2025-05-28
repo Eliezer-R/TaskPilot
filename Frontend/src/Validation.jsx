@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useValidationContext } from './hooks/contextValueUser'
 // This file contains the validation logic and form submission handlers for user registration and login
 // It uses React context to manage form state and validation errors
+const Port = import.meta.env.PORT || 3000
 function useValidation () {
   const {
     setName,
@@ -88,7 +89,7 @@ function useHandleSubmitRegister () {
     }
 
     const success = await sendRequest(
-      'http://localhost:3000/register',
+      `http://localhost:${Port}/register`,
       'POST',
       { name, email, password },
       navigate,
@@ -131,7 +132,7 @@ function useHandleSubmitLogin () {
     }
 
     const success = await sendRequest(
-      'http://localhost:3000/Login',
+      `http://localhost:${Port}/Login`,
       'POST',
       { email, password },
       navigate,

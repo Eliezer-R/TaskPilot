@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 // Recover tasks from the server
-
+const Port = import.meta.env.PORT || 3000
 function useTasks () {
   const [taskObj, setTaskObj] = useState([])
   const [loading, setLoading] = useState(true)
@@ -9,7 +9,7 @@ function useTasks () {
   useEffect(() => {
     const fetchTasks = async () => {
       setLoading(true)
-      const response = await fetch('http://localhost:3000/tasks', {
+      const response = await fetch(`http://localhost:${Port}/tasks`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

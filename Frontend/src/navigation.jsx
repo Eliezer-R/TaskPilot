@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useValidationContext } from './hooks/contextValueUser'
 // Navigation between pages, Login, register, logout and home
-
+const Port = import.meta.env.PORT || 3000
 function useNavigaten (methodName) {
   const navigate = useNavigate()
   const {
@@ -29,7 +29,7 @@ function useNavigaten (methodName) {
   const HandleGo = async () => {
     switch (methodName) {
       case 'logout':
-        await fetch('http://localhost:3000/logout', {
+        await fetch(`http://localhost:${Port}/logout`, {
           method: 'POST',
           credentials: 'include'
         })

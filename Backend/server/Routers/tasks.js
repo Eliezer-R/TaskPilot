@@ -30,39 +30,26 @@ const validationToken = (req, res, next) => {
 }
 
 Router.post('/register', async (req, res) => {
-  console.log('📝 Register request received:', { name: req.body.name, email: req.body.email })
-  
   const { name, email, password } = req.body
 
+  // We could put more validations here, like checking if the email is valid or if the password is strong enough
+
   try {
-    console.log('🔍 Checking if user exists...')
     const [existing] = await db.query('SELECT * FROM users WHERE email = ?', [email])
-    console.log('👤 Existing users found:', existing.length)
-    
     if (existing.length > 0) {
       return res.status(400).json({ message: 'User already exists' })
     }
 
-    console.log('🔐 Hashing password...')
     const hashedPassword = await bcrypt.hash(password, 10)
-    
-    console.log('💾 Inserting new user...')
+
     const [result] = await db.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, hashedPassword])
-    
-    console.log('✅ User created with ID:', result.insertId)
     const newUser = { id: result.insertId, email }
     const token = generateToken(newUser)
 
-    res.cookie('token', token, { 
-      httpOnly: true, 
-      secure: true, 
-      sameSite: 'none',
-      maxAge: 365 * 24 * 60 * 60 * 1000 
-    })
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'none', maxAge: 365 * 24 * 60 * 60 * 1000 })
     res.status(201).json({ token, user: newUser })
   } catch (error) {
-    console.error('❌ Register error details:', error)
-    return res.status(500).json({ message: 'Database error', details: error.message })
+    return res.status(500).json({ message: 'Database error' })
   }
 })
 

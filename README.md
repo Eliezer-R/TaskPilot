@@ -6,6 +6,9 @@
 
 My Task Board es una aplicación web diseñada para gestionar tareas de manera eficiente. Incluye páginas de **register**, **login** y **home**. Permite a los usuarios registrarse, iniciar sesión, crear, editar, eliminar y organizar tareas con diferentes estados e íconos personalizados.
 
+**Puedes ver la aplicación funcionando aquí:**  
+[https://task-pilot-three.vercel.app](https://task-pilot-three.vercel.app)
+
 ## 📚 Tabla de contenido
 
 - [Características](#características)
@@ -66,7 +69,7 @@ My Task Board es una aplicación web diseñada para gestionar tareas de manera e
 
 - **Frontend:** Desplegado en [Vercel](https://vercel.com/), lo que permite actualizaciones automáticas y un rendimiento óptimo para aplicaciones React.
 - **Backend:** Desplegado en [Render](https://render.com/), asegurando disponibilidad y escalabilidad para la API Node.js/Express.
-- **Base de datos:** Utiliza [PlanetScale](https://planetscale.com/) como servicio de base de datos MySQL serverless, ideal para proyectos modernos y escalables.
+- **Base de datos:** Utiliza [PlanetScale](https://railway.com/) como servicio de base de datos MySQL serverless, ideal para proyectos modernos y escalables.
 
 
 ## Buenas prácticas y convenciones

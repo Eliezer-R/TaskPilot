@@ -1,6 +1,6 @@
 # My Task Board
 
-![Diseño de la aplicación](./Frontend/design/Desktop_1350px.jpg)
+![Diseño de la aplicación](https://github.com/tu-usuario/tu-repo/blob/main/Frontend/public/design/Desktop_1350px.jpg?raw=true)
 
 > **El diseño de este proyecto está basado en un reto de [devchallenges.io](https://devchallenges.io/).**
 

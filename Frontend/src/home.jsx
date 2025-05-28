@@ -1,5 +1,5 @@
 import Propery from './components/properyL'
-import mobileDesign from './design/Mobile_412px.jpg'
+
 
 function Home () {
   return (
@@ -29,7 +29,7 @@ function Home () {
           This is done so that we can test the endpoints.
         </p>
         <div className='home-image'>
-          <img src={mobileDesign} alt='design' className='img-design' />
+          <img src='/design/Mobile_412px.jpg' alt='design' className='img-design' />
         </div>
       </div>
     </div>

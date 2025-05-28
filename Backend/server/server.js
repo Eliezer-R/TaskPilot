@@ -30,6 +30,7 @@ app.use(cookieParser())
 app.use('/', Router)
 
 const PORT = process.env.PORT || 3000
+console.log(PORT)
 
 app.listen(PORT, () => {
   console.info(`✅ Server running on http://localhost:${PORT}`)

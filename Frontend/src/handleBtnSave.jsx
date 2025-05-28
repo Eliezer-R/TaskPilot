@@ -24,7 +24,7 @@ const emptyTask = async (taskData) => {
   taskData.icon = emptyIcon
   taskData.status = emptyStatus
 }
-const Port = import.meta.env.VITE_BACKEND_URL || 3000
+const Port = import.meta.env.VITE_BACKEND_URL 
 
 async function UpdateTasks (objId, taskData, setTaskObj) {
   await emptyTask(taskData)

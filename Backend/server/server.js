@@ -6,32 +6,40 @@ import cookieParser from 'cookie-parser'
 
 dotenv.config()
 
-const whitelist = [
-  'http://localhost:5173',            
-  'https://task-pilot-three.vercel.app'  
-];
-
 const app = express()
-app.use(cors({
-    origin: (origin, callback) => {
-    if (!origin || whitelist.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('No permitido por CORS'));
-    }
-  },
+
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'https://task-pilot-three.vercel.app'
+  ],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}))
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Requested-With',
+    'Accept',
+    'Origin'
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200 
+}
+
+app.use(cors(corsOptions))
+
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} - Origin: ${req.get('Origin')}`)
+  next()
+})
+
 app.use(express.json())
 app.use(cookieParser())
 
 app.use('/', Router)
 
 const PORT = process.env.PORT || 3000
-console.log(PORT)
 
 app.listen(PORT, () => {
-  console.info(`✅ Server running on http://localhost:${PORT}`)
+  console.info(`✅ Server running on port ${PORT}`)
 })

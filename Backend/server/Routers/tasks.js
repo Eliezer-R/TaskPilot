@@ -46,7 +46,7 @@ Router.post('/register', async (req, res) => {
     const newUser = { id: result.insertId, email }
     const token = generateToken(newUser)
 
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict', maxAge: 365 * 24 * 60 * 60 * 1000 })
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'none', maxAge: 365 * 24 * 60 * 60 * 1000 })
     res.status(201).json({ token, user: newUser })
   } catch (error) {
     return res.status(500).json({ message: 'Database error' })
@@ -69,7 +69,7 @@ Router.post('/Login', async (req, res) => {
     const newUser = { id: user.user_id, email }
     const token = generateToken(newUser)
 
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' })
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'none' })
     res.status(201).json({ token, user: newUser })
   } catch (error) {
     return res.status(500).json({ message: 'Database error' })
@@ -98,7 +98,7 @@ Router.post('/logout', async (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
     secure: true,
-    sameSite: 'strict'
+    sameSite: 'none',
   })
   res.status(200).json({ message: 'Logged out successfully' })
 })

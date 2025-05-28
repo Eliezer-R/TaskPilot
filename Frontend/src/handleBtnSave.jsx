@@ -29,7 +29,7 @@ const Port = import.meta.env.VITE_BACKEND_URL || 3000
 async function UpdateTasks (objId, taskData, setTaskObj) {
   await emptyTask(taskData)
 
-  const response = await fetch(`http://localhost:${Port}/tasks/${objId.task_id}`, {
+  const response = await fetch(`${Port}/tasks/${objId.task_id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ async function UpdateTasks (objId, taskData, setTaskObj) {
 async function SaveTasks (taskData, setTaskObj) {
   await emptyTask(taskData)
 
-  const response = await fetch(`http://localhost:${Port}/tasks`, {
+  const response = await fetch(`${Port}/tasks`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -89,7 +89,7 @@ function useHandleSubmitRegister () {
     }
 
     const success = await sendRequest(
-      `http://localhost:${Port}/register`,
+      `${Port}/register`,
       'POST',
       { name, email, password },
       navigate,
@@ -132,7 +132,7 @@ function useHandleSubmitLogin () {
     }
 
     const success = await sendRequest(
-      `http://localhost:${Port}/Login`,
+      `${Port}/Login`,
       'POST',
       { email, password },
       navigate,

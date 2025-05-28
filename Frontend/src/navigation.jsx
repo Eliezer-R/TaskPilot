@@ -29,7 +29,7 @@ function useNavigaten (methodName) {
   const HandleGo = async () => {
     switch (methodName) {
       case 'logout':
-        await fetch(`http://localhost:${Port}/logout`, {
+        await fetch(`${Port}/logout`, {
           method: 'POST',
           credentials: 'include'
         })

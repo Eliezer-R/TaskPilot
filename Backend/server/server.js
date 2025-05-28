@@ -6,9 +6,20 @@ import cookieParser from 'cookie-parser'
 
 dotenv.config()
 
+const whitelist = [
+  'http://localhost:5173',            
+  'https://mi-tasks-app.vercel.app'   
+];
+
 const app = express()
 app.use(cors({
-  origin: 'http://localhost:5173',
+    origin: (origin, callback) => {
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

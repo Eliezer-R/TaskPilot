@@ -9,7 +9,7 @@ function useTasks () {
   useEffect(() => {
     const fetchTasks = async () => {
       setLoading(true)
-      const response = await fetch(`http://localhost:${Port}/tasks`, {
+      const response = await fetch(`${Port}/tasks`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

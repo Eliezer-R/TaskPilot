@@ -1,6 +1,6 @@
 # My Task Board
 
-![Diseño de la aplicación](https://github.com/Eliezer-R/TaskPilot/blob/main/Frontend/public/design/Mobile_412px.jpg)
+![Diseño de la aplicación](https://github.com/Eliezer-R/TaskPilot/blob/main/Frontend/public/design/Desktop_1350px.jpg)
 
 > **El diseño de este proyecto está basado en un reto de [devchallenges.io](https://devchallenges.io/).**
 

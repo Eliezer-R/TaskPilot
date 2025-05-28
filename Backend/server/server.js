@@ -8,7 +8,7 @@ dotenv.config()
 
 const whitelist = [
   'http://localhost:5173',            
-  'https://mi-tasks-app.vercel.app'   
+  'https://task-pilot-three.vercel.app'  
 ];
 
 const app = express()

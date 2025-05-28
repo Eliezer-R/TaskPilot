@@ -69,7 +69,7 @@ Router.post('/Login', async (req, res) => {
     const newUser = { id: user.user_id, email }
     const token = generateToken(newUser)
 
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'lax', path: '/', maxAge: 365 * 24 * 60 * 60 * 1000 })
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'none', path: '/', maxAge: 365 * 24 * 60 * 60 * 1000 })
     res.status(201).json({ token, user: newUser })
   } catch (error) {
     return res.status(500).json({ message: 'Database error' })

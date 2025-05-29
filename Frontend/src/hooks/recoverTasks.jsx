@@ -23,7 +23,7 @@ function useTasks () {
           data.message === 'Token expired, please login again' ||
           data.message === 'Unauthorized'
         ) {
-          window.location.href = '/login'
+          window.location.href = '/Login'
         } else {
           console.error('Error fetching tasks:', data.message)
         }

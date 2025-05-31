@@ -50,7 +50,7 @@ function ModalTasks ({ setModalTask, setTaskObj, objId }) {
               value={taskData.description}
               id='description-task' onChange={(e) => handleInputValue(e)}
               placeholder='Enter a short description'
-              autoComplete='description-task'
+              autoComplete='off'
             />
           </div>
 

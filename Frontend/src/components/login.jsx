@@ -34,7 +34,7 @@ function Login () {
               type='text'
               name='password'
               id='pass-input'
-              autoComplete='password'
+              autoComplete='current-password'
               onChange={(e) => validationPassword(e.target.value)}
             />
             {passwordError && <span className='validatLogin'>Please enter a password</span>}

@@ -38,7 +38,7 @@ function ModalTasks ({ setModalTask, setTaskObj, objId }) {
               name='name'
               id='name-task'
               value={taskData.name}
-              autoComplete='name-task'
+              autoComplete='name'
               onChange={(e) => handleInputValue(e)}
             />
           </div>

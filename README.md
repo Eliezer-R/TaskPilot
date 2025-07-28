@@ -69,7 +69,7 @@ My Task Board es una aplicación web diseñada para gestionar tareas de manera e
 
 - **Frontend:** Desplegado en [Vercel](https://vercel.com/), lo que permite actualizaciones automáticas y un rendimiento óptimo para aplicaciones React.
 - **Backend:** Desplegado en [Render](https://render.com/), asegurando disponibilidad y escalabilidad para la API Node.js/Express.
-- **Base de datos:** Utiliza [PlanetScale](https://railway.com/) como servicio de base de datos MySQL serverless, ideal para proyectos modernos y escalables.
+- **Base de datos:** Utiliza [Aiven](https://aiven.io/) como servicio de base de datos MySQL serverless, ideal para proyectos modernos y escalables.
 
 
 ## Buenas prácticas y convenciones

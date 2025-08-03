@@ -18,7 +18,7 @@ describe('Home testing, the botons login and register', () => {
           json: () => Promise.resolve([])
         })
       }
-      // Para login/register
+      // To login/register
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ token: 'fake', user: { id: 1, email: 'juan@gmail.com' } })

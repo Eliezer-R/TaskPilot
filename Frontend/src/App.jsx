@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './home'
 import BackgroundSetter from './backgroundStyle'
 import { ValidationProvider } from './hooks/contextValueUser'
+import BackendWarningToast from './warning'
 
 function App () {
   return (
     <>
       <BrowserRouter>
         <BackgroundSetter />
+        <BackendWarningToast />
         <ValidationProvider>
           <Routes>
             <Route path='/' element={<Home />} />

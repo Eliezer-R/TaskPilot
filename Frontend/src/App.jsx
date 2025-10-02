@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './home'
 import BackgroundSetter from './backgroundStyle'
 import { ValidationProvider } from './hooks/contextValueUser'
-import BackendWarningToast from './warning'
+import BackendWarningToast from './Warning'
 
 function App () {
   return (

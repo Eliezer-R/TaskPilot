@@ -1,13 +1,16 @@
 # My Task Board
 
 ![Diseño de la aplicación](https://github.com/Eliezer-R/TaskPilot/blob/main/Frontend/public/design/Desktop_1350px.jpg)
+
+My Task Board es una aplicación web diseñada para gestionar tareas de manera eficiente. Incluye páginas de **register**, **login** y **home**. Permite a los usuarios registrarse, iniciar sesión, crear, editar, eliminar y organizar tareas con diferentes estados e íconos personalizados.
 ---
 > **El diseño de este proyecto está basado en un reto de [devchallenges.io](https://devchallenges.io/).**
 ---
 > **Nuevo diseño implementado ✨**
 ---
-My Task Board es una aplicación web diseñada para gestionar tareas de manera eficiente. Incluye páginas de **register**, **login** y **home**. Permite a los usuarios registrarse, iniciar sesión, crear, editar, eliminar y organizar tareas con diferentes estados e íconos personalizados.
-
+> **Advertencia :**
+![Diseño de la aplicación](https://github.com/Eliezer-R/TaskPilot/blob/main/Frontend/public/design/advertencia.png)
+---
 **Puedes ver la aplicación funcionando aquí:**  
 [https://task-pilot-three.vercel.app](https://task-pilot-three.vercel.app)
 

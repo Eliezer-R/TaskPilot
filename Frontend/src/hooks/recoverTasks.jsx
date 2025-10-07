@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 // Recover tasks from the server
-const Port = import.meta.env.VITE_BACKEND_URL
+const Port = import.meta.env.VITE_LOCAL_BACKEND_URL
 function useTasks () {
   const [taskObj, setTaskObj] = useState([])
   const [loading, setLoading] = useState(true)

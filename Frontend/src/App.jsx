@@ -1,28 +1,33 @@
-import Register from './components/register'
-import Tasks from './components/Tasks'
-import Login from './components/login'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './home'
-import BackgroundSetter from './backgroundStyle'
+import { lazy, Suspense } from 'react'
 import { ValidationProvider } from './hooks/contextValueUser'
-import BackendWarningToast from './Warning'
 
-function App () {
+
+const LazyHome = lazy(() => import('./home'))
+const LazyRegister = lazy(() => import('./register'))
+const LazyLogin = lazy(() => import('./login'))
+const LazyTasks = lazy(() => import('./components/Tasks'))
+
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <BackgroundSetter />
-        <BackendWarningToast />
-        <ValidationProvider>
+    <BrowserRouter>
+      <ValidationProvider>
+        <Suspense
+          fallback={
+            <div className="loading-screen">
+              <div className="loading-spinner" />
+            </div>
+          }
+        >
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/Login' element={<Login />} />
-            <Route path='/tasks' element={<Tasks />} />
+            <Route path="/" element={<LazyHome />} />
+            <Route path="/register" element={<LazyRegister />} />
+            <Route path="/login" element={<LazyLogin />} />
+            <Route path="/tasks" element={<LazyTasks />} />
           </Routes>
-        </ValidationProvider>
-      </BrowserRouter>
-    </>
+        </Suspense>
+      </ValidationProvider>
+    </BrowserRouter>
   )
 }
 

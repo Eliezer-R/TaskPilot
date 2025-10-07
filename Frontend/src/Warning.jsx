@@ -1,26 +1,36 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-export default function BackendWarningToast() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isExiting, setIsExiting] = useState(false);
+export default function BackendWarningToast () {
+  const [isVisible, setIsVisible] = useState(false)
+  const [isExiting, setIsExiting] = useState(false)
 
   useEffect(() => {
-
+    const hasShownToast = localStorage.getItem('backendWarningShown')
+    if (hasShownToast) {
+      setIsVisible(false)
+      return
+    }
+    setIsVisible(true)
+    
     const fadeTimer = setTimeout(() => {
-      setIsExiting(true);
-    }, 6000);
+      setIsExiting(true)
+    }, 6000)
 
     const hideTimer = setTimeout(() => {
-      setIsVisible(false);
-    }, 6500);
+      setIsVisible(false)
+      
+      localStorage.setItem('backendWarningShown', 'true')
+    }, 6500)
 
+   
     return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(hideTimer);
-    };
-  }, []);
+      clearTimeout(fadeTimer)
+      clearTimeout(hideTimer)
+    }
+  }, [])
 
-  if (!isVisible) return null;
+  
+  if (!isVisible) return null
 
   return (
     <>
@@ -31,7 +41,7 @@ export default function BackendWarningToast() {
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          z-index: 50;
+          z-index: 9999;
           pointer-events: none;
           padding: 1.5rem 1rem;
         }
@@ -224,39 +234,38 @@ export default function BackendWarningToast() {
             height: 3px;
           }
         }
-      `}</style>
+      `}
+      </style>
 
-      <div className="backend-warning-container">
+      <div className='backend-warning-container'>
         <div className={`backend-warning-toast ${isExiting ? 'exiting' : ''}`}>
-          <div className="toast-content">
-         
-            <div className="toast-icon-wrapper">
-              <div className="toast-icon-glow"></div>
-              <div className="toast-icon">
+          <div className='toast-content'>
+
+            <div className='toast-icon-wrapper'>
+              <div className='toast-icon-glow' />
+              <div className='toast-icon'>
                 <span style={{ fontSize: '1.25rem' }}>⏱️</span>
               </div>
             </div>
 
-          
-            <div className="toast-text-content">
-              <div className="toast-header">
-                <h3 className="toast-title">
+            <div className='toast-text-content'>
+              <div className='toast-header'>
+                <h3 className='toast-title'>
                   Espera...
                 </h3>
                 <span style={{ fontSize: '1rem' }}>⚡</span>
               </div>
-              <p className="toast-description">
-                El servidor puede tardar <span className="toast-highlight">1-2 minutos</span> en activarse desde el modo de espera (Render free tier).
+              <p className='toast-description'>
+                El servidor puede tardar <span className='toast-highlight'>1-2 minutos</span> en activarse desde el modo de espera (Render free tier).
               </p>
             </div>
           </div>
 
-          
-          <div className="toast-progress-bar">
-            <div className="toast-progress-fill"></div>
+          <div className='toast-progress-bar'>
+            <div className='toast-progress-fill' />
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }

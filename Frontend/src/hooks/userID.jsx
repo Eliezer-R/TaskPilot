@@ -10,7 +10,6 @@ function useObjId ({ objId }) {
     status: null
   })
 
- 
   useEffect(() => {
     if (objId && objId.task_id !== 0) {
       setTaskData({

@@ -1,9 +1,11 @@
 # My Task Board
 
 ![Diseño de la aplicación](https://github.com/Eliezer-R/TaskPilot/blob/main/Frontend/public/design/Desktop_1350px.jpg)
-
+---
 > **El diseño de este proyecto está basado en un reto de [devchallenges.io](https://devchallenges.io/).**
-> **Nuevo diseño implementado**
+---
+> **Nuevo diseño implementado ✨**
+---
 My Task Board es una aplicación web diseñada para gestionar tareas de manera eficiente. Incluye páginas de **register**, **login** y **home**. Permite a los usuarios registrarse, iniciar sesión, crear, editar, eliminar y organizar tareas con diferentes estados e íconos personalizados.
 
 **Puedes ver la aplicación funcionando aquí:**  
@@ -17,7 +19,6 @@ My Task Board es una aplicación web diseñada para gestionar tareas de manera e
 - [Pruebas](#pruebas)
 - [Despliegue](#despliegue)
 - [Buenas prácticas y convenciones](#buenas-prácticas-y-convenciones)
-- [Próximas mejoras](#próximas-mejoras)
 - [Instalación y ejecución](#instalación-y-ejecución)
 - [Cómo contribuir](#cómo-contribuir)
 
@@ -114,7 +115,6 @@ DB_PASSWORD=tu_password
 DB_NAME=nombre_de_tu_base_de_datos
 ```
 
-> **Nota:** No subas tu archivo `.env` al repositorio.
 
 ### 4. Configura la base de datos
 
